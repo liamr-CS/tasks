@@ -171,3 +171,34 @@ export function mergeQuestion(
         published: false
     };
 }
+
+/**
+ * Consumes a question and a type, and produces a new question.
+ * The new question will use the `type` of the parameter.
+ * If the question is not multiple choice, the new question's
+ * options will be set to an empty array.
+ */
+export function changeType(question: Question, type: QuestionType): Question {
+    if (type !== "multiple_choice_question") {
+        return { ...question, options: [], type: type };
+    } else {
+        return { ...question, options: [...question.options], type: type };
+    }
+}
+
+export function addOptionSplice(
+    question: Question,
+    targetOptionIndex: number,
+    newOption: string
+): Question {
+    const newQuestion = {
+        ...question,
+        options: [...question.options]
+    };
+    if (targetOptionIndex != -1) {
+        newQuestion.options.splice(targetOptionIndex, 1, newOption);
+    } else {
+        newQuestion.options.push(newOption);
+    }
+    return newQuestion;
+}
