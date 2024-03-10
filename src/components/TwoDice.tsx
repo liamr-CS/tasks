@@ -11,7 +11,6 @@ import { Button } from "react-bootstrap";
 export function TwoDice(): JSX.Element {
     const [dice1Val, dice1] = useState<number>(1);
     const [dice2Val, dice2] = useState<number>(2);
-    const [winOrLose, result] = useState<boolean>(false);
 
     function d6(): number {
         return 1 + Math.floor(Math.random() * 6);
