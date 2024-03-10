@@ -1,8 +1,5 @@
-import { isDisabled } from "@testing-library/user-event/dist/utils";
-import { screen } from "@testing-library/react";
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
-import { NumberLiteralType } from "typescript";
 /***
  * The StartAttempt component simulates yet another part of the quiz application, this time providing a “Start” and “Stop” button for the quiz. Since the quiz should have a limited number of attempts, there is also a “Mulligan” button to give more attempts.
 
