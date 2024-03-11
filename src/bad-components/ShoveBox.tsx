@@ -3,10 +3,13 @@ import { Button } from "react-bootstrap";
 
 export function ShoveBox(): JSX.Element {
     const [position, setPosition] = useState<number>(10);
+    console.log("Before: " + position.toString() + "px");
     const box = MoveableBox();
+
     function ShoveBoxButton() {
+        console.log(position.toString());
         return (
-            <Button onClick={() => setPosition(4 + position)}>
+            <Button onClick={() => setPosition(position.valueOf() + 4)}>
                 Shove the Box
             </Button>
         );
