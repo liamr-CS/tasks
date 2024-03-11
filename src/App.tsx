@@ -66,7 +66,7 @@ function App(): JSX.Element {
                 automatically reload. Hello World
             </p>
             <hr></hr>
-            {/* <DoubleHalf></DoubleHalf> */}
+            <DoubleHalf></DoubleHalf>
             <hr></hr>
             <ChooseTeam></ChooseTeam>
             <hr></hr>
