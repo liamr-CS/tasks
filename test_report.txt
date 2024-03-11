@@ -12,36 +12,17 @@ Browserslist: caniuse-lite is outdated. Please run:
   npx browserslist@latest --update-db
   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
 PASS src/objects.test.ts
-PASS src/arrays.test.ts
 PASS src/nested.test.ts
+PASS src/arrays.test.ts
 PASS src/components/StartAttempt.test.tsx
 PASS src/bad-components/ChooseTeam.test.tsx
 PASS src/components/TwoDice.test.tsx
 PASS src/functions.test.ts
 PASS src/bad-components/DoubleHalf.test.tsx
 PASS src/components/ChangeType.test.tsx
-PASS src/components/CycleHoliday.test.tsx
 PASS src/components/Counter.test.tsx
+PASS src/components/CycleHoliday.test.tsx
 PASS src/components/RevealAnswer.test.tsx
-FAIL src/bad-components/ShoveBox.test.tsx
-  ● ShoveBox Component tests › Clicking the button moves the box.
-
-    expect(element).toHaveStyle()
-
-    - Expected
-
-    - marginLeft: 18px;
-
-      21 |         });
-      22 |         shoveBox.click();
-    > 23 |         expect(screen.getByTestId("moveable-box")).toHaveStyle({
-         |                                                    ^
-      24 |             marginLeft: "18px"
-      25 |         });
-      26 |         shoveBox.click();
-
-      at Object.<anonymous> (src/bad-components/ShoveBox.test.tsx:23:52)
-
 FAIL src/bad-components/ColoredBox.test.tsx
   ● ColoredBox Component tests › Clicking the button advances the color.
 
@@ -61,11 +42,84 @@ FAIL src/bad-components/ColoredBox.test.tsx
 
       at Object.<anonymous> (src/bad-components/ColoredBox.test.tsx:23:51)
 
+FAIL src/bad-components/ShoveBox.test.tsx
+  ● Console
+
+    console.log
+      Before: 10px
+
+      at ShoveBox (src/bad-components/ShoveBox.tsx:6:13)
+
+    console.log
+      10
+
+      at ShoveBoxButton (src/bad-components/ShoveBox.tsx:10:17)
+
+    console.log
+      Before: 10px
+
+      at ShoveBox (src/bad-components/ShoveBox.tsx:6:13)
+
+    console.log
+      10
+
+      at ShoveBoxButton (src/bad-components/ShoveBox.tsx:10:17)
+
+    console.log
+      Before: 10px
+
+      at ShoveBox (src/bad-components/ShoveBox.tsx:6:13)
+
+    console.log
+      10
+
+      at ShoveBoxButton (src/bad-components/ShoveBox.tsx:10:17)
+
+    console.log
+      Before: 14px
+
+      at ShoveBox (src/bad-components/ShoveBox.tsx:6:13)
+
+    console.log
+      14
+
+      at ShoveBoxButton (src/bad-components/ShoveBox.tsx:10:17)
+
+  ● ShoveBox Component tests › Clicking the button moves the box.
+
+    expect(element).toHaveStyle()
+
+    - Expected
+
+    - marginLeft: 18px;
+
+      21 |         });
+      22 |         shoveBox.click();
+    > 23 |         expect(screen.getByTestId("moveable-box")).toHaveStyle({
+         |                                                    ^
+      24 |             marginLeft: "18px"
+      25 |         });
+      26 |         shoveBox.click();
+
+      at Object.<anonymous> (src/bad-components/ShoveBox.test.tsx:23:52)
+
 PASS src/App.test.tsx
+  ● Console
+
+    console.log
+      Before: 10px
+
+      at ShoveBox (src/bad-components/ShoveBox.tsx:6:13)
+
+    console.log
+      10
+
+      at ShoveBoxButton (src/bad-components/ShoveBox.tsx:10:17)
+
 ----------------------|---------|----------|---------|---------|-------------------
 File                  | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ----------------------|---------|----------|---------|---------|-------------------
-All files             |   99.59 |    95.12 |   99.15 |   99.59 |                   
+All files             |    99.6 |    95.12 |   99.15 |   99.59 |                   
  src                  |   99.35 |      100 |   98.61 |   99.33 |                   
   App.tsx             |      50 |      100 |      50 |      50 | 34                
   arrays.ts           |     100 |      100 |     100 |     100 |                   
@@ -93,5 +147,5 @@ All files             |   99.59 |    95.12 |   99.15 |   99.59 |
 Test Suites: 2 failed, 13 passed, 15 total
 Tests:       2 failed, 108 passed, 110 total
 Snapshots:   0 total
-Time:        6.644 s
+Time:        7.065 s
 Ran all test suites.
