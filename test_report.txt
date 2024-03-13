@@ -12,96 +12,80 @@ Browserslist: caniuse-lite is outdated. Please run:
   npx browserslist@latest --update-db
   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
 PASS src/objects.test.ts
-PASS src/nested.test.ts
 PASS src/arrays.test.ts
+PASS src/nested.test.ts
 PASS src/components/StartAttempt.test.tsx
-PASS src/bad-components/ChooseTeam.test.tsx
 PASS src/components/TwoDice.test.tsx
-PASS src/functions.test.ts
+PASS src/bad-components/ChooseTeam.test.tsx
 PASS src/bad-components/DoubleHalf.test.tsx
+PASS src/functions.test.ts
+PASS src/components/CycleHoliday.test.tsx
 PASS src/components/ChangeType.test.tsx
 PASS src/components/Counter.test.tsx
-PASS src/components/CycleHoliday.test.tsx
 PASS src/components/RevealAnswer.test.tsx
-FAIL src/bad-components/ColoredBox.test.tsx
-  ● ColoredBox Component tests › Clicking the button advances the color.
-
-    expect(element).toHaveStyle()
-
-    - Expected
-
-    - backgroundColor: green;
-
-      21 |         });
-      22 |         nextColor.click();
-    > 23 |         expect(screen.getByTestId("colored-box")).toHaveStyle({
-         |                                                   ^
-      24 |             backgroundColor: "green"
-      25 |         });
-      26 |         nextColor.click();
-
-      at Object.<anonymous> (src/bad-components/ColoredBox.test.tsx:23:51)
-
-FAIL src/bad-components/ShoveBox.test.tsx
+PASS src/bad-components/ColoredBox.test.tsx
+PASS src/bad-components/ShoveBox.test.tsx
   ● Console
 
     console.log
       Before: 10px
 
-      at ShoveBox (src/bad-components/ShoveBox.tsx:6:13)
+      at ShoveBox (src/bad-components/ShoveBox.tsx:36:13)
 
     console.log
       10
 
-      at ShoveBoxButton (src/bad-components/ShoveBox.tsx:10:17)
+      at ShoveBoxButton (src/bad-components/ShoveBox.tsx:28:13)
 
     console.log
       Before: 10px
 
-      at ShoveBox (src/bad-components/ShoveBox.tsx:6:13)
+      at ShoveBox (src/bad-components/ShoveBox.tsx:36:13)
 
     console.log
       10
 
-      at ShoveBoxButton (src/bad-components/ShoveBox.tsx:10:17)
+      at ShoveBoxButton (src/bad-components/ShoveBox.tsx:28:13)
 
     console.log
       Before: 10px
 
-      at ShoveBox (src/bad-components/ShoveBox.tsx:6:13)
+      at ShoveBox (src/bad-components/ShoveBox.tsx:36:13)
 
     console.log
       10
 
-      at ShoveBoxButton (src/bad-components/ShoveBox.tsx:10:17)
+      at ShoveBoxButton (src/bad-components/ShoveBox.tsx:28:13)
 
     console.log
       Before: 14px
 
-      at ShoveBox (src/bad-components/ShoveBox.tsx:6:13)
+      at ShoveBox (src/bad-components/ShoveBox.tsx:36:13)
 
     console.log
       14
 
-      at ShoveBoxButton (src/bad-components/ShoveBox.tsx:10:17)
+      at ShoveBoxButton (src/bad-components/ShoveBox.tsx:28:13)
 
-  ● ShoveBox Component tests › Clicking the button moves the box.
+    console.log
+      Before: 18px
 
-    expect(element).toHaveStyle()
+      at ShoveBox (src/bad-components/ShoveBox.tsx:36:13)
 
-    - Expected
+    console.log
+      18
 
-    - marginLeft: 18px;
+      at ShoveBoxButton (src/bad-components/ShoveBox.tsx:28:13)
 
-      21 |         });
-      22 |         shoveBox.click();
-    > 23 |         expect(screen.getByTestId("moveable-box")).toHaveStyle({
-         |                                                    ^
-      24 |             marginLeft: "18px"
-      25 |         });
-      26 |         shoveBox.click();
+    console.log
+      Before: 22px
 
-      at Object.<anonymous> (src/bad-components/ShoveBox.test.tsx:23:52)
+      at ShoveBox (src/bad-components/ShoveBox.tsx:36:13)
+
+    console.log
+      22
+
+      at ShoveBoxButton (src/bad-components/ShoveBox.tsx:28:13)
 
 PASS src/App.test.tsx
   ● Console
@@ -109,12 +93,12 @@ PASS src/App.test.tsx
     console.log
       Before: 10px
 
-      at ShoveBox (src/bad-components/ShoveBox.tsx:6:13)
+      at ShoveBox (src/bad-components/ShoveBox.tsx:36:13)
 
     console.log
       10
 
-      at ShoveBoxButton (src/bad-components/ShoveBox.tsx:10:17)
+      at ShoveBoxButton (src/bad-components/ShoveBox.tsx:28:13)
 
 ----------------------|---------|----------|---------|---------|-------------------
 File                  | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
@@ -144,8 +128,8 @@ All files             |    99.6 |    95.12 |   99.15 |   99.59 |
   question.ts         |       0 |        0 |       0 |       0 |                   
 ----------------------|---------|----------|---------|---------|-------------------
 
-Test Suites: 2 failed, 13 passed, 15 total
-Tests:       2 failed, 108 passed, 110 total
+Test Suites: 15 passed, 15 total
+Tests:       110 passed, 110 total
 Snapshots:   0 total
-Time:        7.065 s
+Time:        6.55 s
 Ran all test suites.
