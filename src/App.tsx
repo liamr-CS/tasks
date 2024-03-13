@@ -71,24 +71,7 @@ function App(): JSX.Element {
                 automatically reload. Hello World
             </p>
             <hr></hr>
-<<<<<<< HEAD
             <DoubleHalf></DoubleHalf>
-=======
-            <CheckAnswer expectedAnswer="42"></CheckAnswer>
-            <hr></hr>
-            <GiveAttempts></GiveAttempts>
-            <hr></hr>
-            <EditMode></EditMode>
-            <hr></hr>
-            <ChangeColor></ChangeColor>
-            <hr></hr>
-            <MultipleChoiceQuestion
-                options={["a", "b", "c"]}
-                expectedAnswer="b"
-            ></MultipleChoiceQuestion>
-            <hr></hr>
-            {/* <DoubleHalf></DoubleHalf> */}
->>>>>>> upstream/task-forms
             <hr></hr>
             <ChooseTeam></ChooseTeam>
             <hr></hr>
