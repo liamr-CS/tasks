@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 export function MultipleChoiceQuestion({
     options,
@@ -10,6 +10,7 @@ export function MultipleChoiceQuestion({
     return (
         <div>
             <h3>Multiple Choice Question</h3>
+            {options} {expectedAnswer}
         </div>
     );
 }
