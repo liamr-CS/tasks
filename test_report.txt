@@ -14,122 +14,606 @@ Browserslist: caniuse-lite is outdated. Please run:
 PASS src/objects.test.ts
 PASS src/arrays.test.ts
 PASS src/nested.test.ts
+FAIL src/form-components/MultipleChoiceQuestion.test.tsx
+  ● MultipleChoiceQuestion Component tests › There is a select box
+
+    TestingLibraryElementError: Unable to find an accessible element with the role "combobox"
+
+    Here are the accessible roles:
+
+      heading:
+
+      Name "Multiple Choice Question":
+      [36m<h3 />[39m
+
+      --------------------------------------------------
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<h3>[39m
+            [0mMultiple Choice Question[0m
+          [36m</h3>[39m
+          [0m1[0m
+          [0m2[0m
+          [0m3[0m
+          [0m [0m
+          [0m2[0m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      12 |             />
+      13 |         );
+    > 14 |         expect(screen.getByRole("combobox")).toBeInTheDocument();
+         |                       ^
+      15 |     });
+      16 |     test("The answer is initially incorrect", () => {
+      17 |         render(
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/form-components/MultipleChoiceQuestion.test.tsx:14:23)
+
+  ● MultipleChoiceQuestion Component tests › The answer is initially incorrect
+
+    TestingLibraryElementError: Unable to find an element with the text: /❌/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<h3>[39m
+            [0mMultiple Choice Question[0m
+          [36m</h3>[39m
+          [0m1[0m
+          [0m2[0m
+          [0m3[0m
+          [0m [0m
+          [0m2[0m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      21 |             />
+      22 |         );
+    > 23 |         expect(screen.getByText(/❌/i)).toBeInTheDocument();
+         |                       ^
+      24 |         expect(screen.queryByText(/✔️/i)).not.toBeInTheDocument();
+      25 |     });
+      26 |     test("Can choose the correct answer", () => {
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/form-components/MultipleChoiceQuestion.test.tsx:23:23)
+
+  ● MultipleChoiceQuestion Component tests › Can choose the correct answer
+
+    TestingLibraryElementError: Unable to find an accessible element with the role "combobox"
+
+    Here are the accessible roles:
+
+      heading:
+
+      Name "Multiple Choice Question":
+      [36m<h3 />[39m
+
+      --------------------------------------------------
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<h3>[39m
+            [0mMultiple Choice Question[0m
+          [36m</h3>[39m
+          [0m1[0m
+          [0m2[0m
+          [0m3[0m
+          [0m [0m
+          [0m2[0m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      31 |             />
+      32 |         );
+    > 33 |         const select = screen.getByRole("combobox");
+         |                               ^
+      34 |         userEvent.selectOptions(select, "2");
+      35 |         expect(screen.getByText(/✔️/i)).toBeInTheDocument();
+      36 |         expect(screen.queryByText(/❌/i)).not.toBeInTheDocument();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/form-components/MultipleChoiceQuestion.test.tsx:33:31)
+
+  ● MultipleChoiceQuestion Component tests › Can choose the correct answer and then incorrect
+
+    TestingLibraryElementError: Unable to find an accessible element with the role "combobox"
+
+    Here are the accessible roles:
+
+      heading:
+
+      Name "Multiple Choice Question":
+      [36m<h3 />[39m
+
+      --------------------------------------------------
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<h3>[39m
+            [0mMultiple Choice Question[0m
+          [36m</h3>[39m
+          [0m1[0m
+          [0m2[0m
+          [0m3[0m
+          [0m [0m
+          [0m2[0m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      43 |             />
+      44 |         );
+    > 45 |         const select = screen.getByRole("combobox");
+         |                               ^
+      46 |         userEvent.selectOptions(select, "2");
+      47 |         expect(screen.getByText(/✔️/i)).toBeInTheDocument();
+      48 |         expect(screen.queryByText(/❌/i)).not.toBeInTheDocument();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/form-components/MultipleChoiceQuestion.test.tsx:45:31)
+
+  ● MultipleChoiceQuestion Component tests › Can start off initially correct
+
+    TestingLibraryElementError: Unable to find an accessible element with the role "combobox"
+
+    Here are the accessible roles:
+
+      heading:
+
+      Name "Multiple Choice Question":
+      [36m<h3 />[39m
+
+      --------------------------------------------------
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<h3>[39m
+            [0mMultiple Choice Question[0m
+          [36m</h3>[39m
+          [0mAlpha[0m
+          [0mBeta[0m
+          [0mGamma[0m
+          [0m [0m
+          [0mAlpha[0m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      58 |             />
+      59 |         );
+    > 60 |         const select = screen.getByRole("combobox");
+         |                               ^
+      61 |         userEvent.selectOptions(select, "Alpha");
+      62 |         expect(screen.getByText(/✔️/i)).toBeInTheDocument();
+      63 |         expect(screen.queryByText(/❌/i)).not.toBeInTheDocument();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/form-components/MultipleChoiceQuestion.test.tsx:60:31)
+
+  ● MultipleChoiceQuestion Component tests › One more test of choosing the right answer
+
+    TestingLibraryElementError: Unable to find an element with the text: /❌/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<h3>[39m
+            [0mMultiple Choice Question[0m
+          [36m</h3>[39m
+          [0mHello[0m
+          [0mWorld[0m
+          [0m [0m
+          [0mWorld[0m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      70 |             />
+      71 |         );
+    > 72 |         expect(screen.getByText(/❌/i)).toBeInTheDocument();
+         |                       ^
+      73 |         expect(screen.queryByText(/✔️/i)).not.toBeInTheDocument();
+      74 |         const select = screen.getByRole("combobox");
+      75 |         userEvent.selectOptions(select, "World");
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/form-components/MultipleChoiceQuestion.test.tsx:72:23)
+
 PASS src/components/StartAttempt.test.tsx
 PASS src/components/TwoDice.test.tsx
-PASS src/bad-components/ChooseTeam.test.tsx
-PASS src/bad-components/DoubleHalf.test.tsx
 PASS src/functions.test.ts
-PASS src/components/CycleHoliday.test.tsx
+PASS src/bad-components/DoubleHalf.test.tsx
+PASS src/bad-components/ChooseTeam.test.tsx
+PASS src/form-components/CheckAnswer.test.tsx
 PASS src/components/ChangeType.test.tsx
+FAIL src/form-components/EditMode.test.tsx
+  ● EditMode Component tests › Editing the name and student status changes the text
+
+    TestingLibraryElementError: Unable to find an accessible element with the role "checkbox" and name `/student/i`
+
+    Here are the accessible roles:
+
+      heading:
+
+      Name "Edit Mode":
+      [36m<h3 />[39m
+
+      --------------------------------------------------
+      checkbox:
+
+      Name "":
+      [36m<input[39m
+        [33mclass[39m=[32m"form-check-input"[39m
+        [33mname[39m=[32m"edit"[39m
+        [33mtype[39m=[32m"checkbox"[39m
+      [36m/>[39m
+
+      Name "":
+      [36m<input[39m
+        [33mchecked[39m=[32m""[39m
+        [33mclass[39m=[32m"form-check-input"[39m
+        [33mname[39m=[32m"student"[39m
+        [33mtype[39m=[32m"checkbox"[39m
+      [36m/>[39m
+
+      --------------------------------------------------
+      textbox:
+
+      Name "name":
+      [36m<input[39m
+        [33mclass[39m=[32m"form-control"[39m
+        [33mplaceholder[39m=[32m"Your Name"[39m
+        [33mtitle[39m=[32m"name"[39m
+        [33mvalue[39m=[32m"Your NameAda Lovelace"[39m
+      [36m/>[39m
+
+      --------------------------------------------------
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<h3>[39m
+            [0mEdit Mode[0m
+          [36m</h3>[39m
+          [36m<div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check form-switch"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mname[39m=[32m"edit"[39m
+                [33mtype[39m=[32m"checkbox"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0mEdit Mode[0m
+              [36m</label>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<div>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-control"[39m
+                [33mplaceholder[39m=[32m"Your Name"[39m
+                [33mtitle[39m=[32m"name"[39m
+                [33mvalue[39m=[32m"Your NameAda Lovelace"[39m
+              [36m/>[39m
+            [36m</div>[39m
+            [36m<div>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-label"[39m
+              [36m>[39m
+                [0mStudent[0m
+              [36m</label>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"form-check form-check-inline"[39m
+              [36m>[39m
+                [36m<input[39m
+                  [33mchecked[39m=[32m""[39m
+                  [33mclass[39m=[32m"form-check-input"[39m
+                  [33mname[39m=[32m"student"[39m
+                  [33mtype[39m=[32m"checkbox"[39m
+                [36m/>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"form-check-label"[39m
+                  [33mtitle[39m=[32m"student"[39m
+                [36m>[39m
+                  [0mstudent[0m
+                [36m</label>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      26 |         const nameBox = screen.getByRole("textbox");
+      27 |         userEvent.type(nameBox, "Ada Lovelace");
+    > 28 |         const studentBox = screen.getByRole("checkbox", { name: /student/i });
+         |                                   ^
+      29 |         studentBox.click();
+      30 |         switchButton.click();
+      31 |         expect(
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/form-components/EditMode.test.tsx:28:35)
+
+  ● EditMode Component tests › Different name, click student box twice changes the text
+
+    TestingLibraryElementError: Unable to find an accessible element with the role "checkbox" and name `/student/i`
+
+    Here are the accessible roles:
+
+      heading:
+
+      Name "Edit Mode":
+      [36m<h3 />[39m
+
+      --------------------------------------------------
+      checkbox:
+
+      Name "":
+      [36m<input[39m
+        [33mclass[39m=[32m"form-check-input"[39m
+        [33mname[39m=[32m"edit"[39m
+        [33mtype[39m=[32m"checkbox"[39m
+      [36m/>[39m
+
+      Name "":
+      [36m<input[39m
+        [33mchecked[39m=[32m""[39m
+        [33mclass[39m=[32m"form-check-input"[39m
+        [33mname[39m=[32m"student"[39m
+        [33mtype[39m=[32m"checkbox"[39m
+      [36m/>[39m
+
+      --------------------------------------------------
+      textbox:
+
+      Name "name":
+      [36m<input[39m
+        [33mclass[39m=[32m"form-control"[39m
+        [33mplaceholder[39m=[32m"Your Name"[39m
+        [33mtitle[39m=[32m"name"[39m
+        [33mvalue[39m=[32m"Your NameAlan Turing"[39m
+      [36m/>[39m
+
+      --------------------------------------------------
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<h3>[39m
+            [0mEdit Mode[0m
+          [36m</h3>[39m
+          [36m<div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check form-switch"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mname[39m=[32m"edit"[39m
+                [33mtype[39m=[32m"checkbox"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0mEdit Mode[0m
+              [36m</label>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<div>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-control"[39m
+                [33mplaceholder[39m=[32m"Your Name"[39m
+                [33mtitle[39m=[32m"name"[39m
+                [33mvalue[39m=[32m"Your NameAlan Turing"[39m
+              [36m/>[39m
+            [36m</div>[39m
+            [36m<div>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-label"[39m
+              [36m>[39m
+                [0mStudent[0m
+              [36m</label>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"form-check form-check-inline"[39m
+              [36m>[39m
+                [36m<input[39m
+                  [33mchecked[39m=[32m""[39m
+                  [33mclass[39m=[32m"form-check-input"[39m
+                  [33mname[39m=[32m"student"[39m
+                  [33mtype[39m=[32m"checkbox"[39m
+                [36m/>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"form-check-label"[39m
+                  [33mtitle[39m=[32m"student"[39m
+                [36m>[39m
+                  [0mstudent[0m
+                [36m</label>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      38 |         const nameBox = screen.getByRole("textbox");
+      39 |         userEvent.type(nameBox, "Alan Turing");
+    > 40 |         const studentBox = screen.getByRole("checkbox", { name: /student/i });
+         |                                   ^
+      41 |         studentBox.click();
+      42 |         studentBox.click();
+      43 |         switchButton.click();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/form-components/EditMode.test.tsx:40:35)
+
+PASS src/components/CycleHoliday.test.tsx
+PASS src/form-components/GiveAttempts.test.tsx
+FAIL src/form-components/ChangeColor.test.tsx
+  ● ChangeColor Component tests › There are at least 8 radio buttons and the colored box
+
+    TestingLibraryElementError: Unable to find an accessible element with the role "radio"
+
+    Here are the accessible roles:
+
+      heading:
+
+      Name "Change Color":
+      [36m<h3 />[39m
+
+      --------------------------------------------------
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<h3>[39m
+            [0mChange Color[0m
+          [36m</h3>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+       6 |     beforeEach(() => render(<ChangeColor />));
+       7 |     test("There are at least 8 radio buttons and the colored box", () => {
+    >  8 |         const radios = screen.getAllByRole("radio");
+         |                               ^
+       9 |         expect(radios.length).toBeGreaterThanOrEqual(8);
+      10 |         expect(screen.getByTestId("colored-box")).toBeInTheDocument();
+      11 |     });
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at getAllByRole (node_modules/@testing-library/dom/dist/query-helpers.js:130:15)
+      at Object.<anonymous> (src/form-components/ChangeColor.test.tsx:8:31)
+
+  ● ChangeColor Component tests › Switching the color switches the displayed color.
+
+    TestingLibraryElementError: Unable to find an accessible element with the role "radio"
+
+    Here are the accessible roles:
+
+      heading:
+
+      Name "Change Color":
+      [36m<h3 />[39m
+
+      --------------------------------------------------
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<h3>[39m
+            [0mChange Color[0m
+          [36m</h3>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      11 |     });
+      12 |     test("Switching the color switches the displayed color.", () => {
+    > 13 |         const radios: HTMLInputElement[] = screen.getAllByRole("radio");
+         |                                                   ^
+      14 |         // Switch to first
+      15 |         radios[0].click();
+      16 |         let coloredBox = screen.getByTestId("colored-box");
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at getAllByRole (node_modules/@testing-library/dom/dist/query-helpers.js:130:15)
+      at Object.<anonymous> (src/form-components/ChangeColor.test.tsx:13:51)
+
 PASS src/components/Counter.test.tsx
 PASS src/components/RevealAnswer.test.tsx
 PASS src/bad-components/ColoredBox.test.tsx
-PASS src/bad-components/ShoveBox.test.tsx
-  ● Console
-
-    console.log
-      Before: 10px
-
-      at ShoveBox (src/bad-components/ShoveBox.tsx:36:13)
-
-    console.log
-      10
-
-      at ShoveBoxButton (src/bad-components/ShoveBox.tsx:28:13)
-
-    console.log
-      Before: 10px
-
-      at ShoveBox (src/bad-components/ShoveBox.tsx:36:13)
-
-    console.log
-      10
-
-      at ShoveBoxButton (src/bad-components/ShoveBox.tsx:28:13)
-
-    console.log
-      Before: 10px
-
-      at ShoveBox (src/bad-components/ShoveBox.tsx:36:13)
-
-    console.log
-      10
-
-      at ShoveBoxButton (src/bad-components/ShoveBox.tsx:28:13)
-
-    console.log
-      Before: 14px
-
-      at ShoveBox (src/bad-components/ShoveBox.tsx:36:13)
-
-    console.log
-      14
-
-      at ShoveBoxButton (src/bad-components/ShoveBox.tsx:28:13)
-
-    console.log
-      Before: 18px
-
-      at ShoveBox (src/bad-components/ShoveBox.tsx:36:13)
-
-    console.log
-      18
-
-      at ShoveBoxButton (src/bad-components/ShoveBox.tsx:28:13)
-
-    console.log
-      Before: 22px
-
-      at ShoveBox (src/bad-components/ShoveBox.tsx:36:13)
-
-    console.log
-      22
-
-      at ShoveBoxButton (src/bad-components/ShoveBox.tsx:28:13)
-
 PASS src/App.test.tsx
-  ● Console
+PASS src/bad-components/ShoveBox.test.tsx
+-----------------------------|---------|----------|---------|---------|-------------------
+File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-----------------------------|---------|----------|---------|---------|-------------------
+All files                    |   99.25 |    94.56 |   98.46 |   99.23 |                   
+ src                         |   99.35 |      100 |   98.61 |   99.33 |                   
+  App.tsx                    |      50 |      100 |      50 |      50 | 39                
+  arrays.ts                  |     100 |      100 |     100 |     100 |                   
+  functions.ts               |     100 |      100 |     100 |     100 |                   
+  nested.ts                  |     100 |      100 |     100 |     100 |                   
+  objects.ts                 |     100 |      100 |     100 |     100 |                   
+ src/bad-components          |     100 |       50 |     100 |     100 |                   
+  ChooseTeam.tsx             |     100 |       50 |     100 |     100 | 18                
+  ColoredBox.tsx             |     100 |      100 |     100 |     100 |                   
+  DoubleHalf.tsx             |     100 |      100 |     100 |     100 |                   
+  DoubleHalfState.tsx        |       0 |        0 |       0 |       0 |                   
+  ShoveBox.tsx               |     100 |      100 |     100 |     100 |                   
+ src/components              |     100 |    86.36 |     100 |     100 |                   
+  ChangeType.tsx             |     100 |      100 |     100 |     100 |                   
+  Counter.tsx                |     100 |      100 |     100 |     100 |                   
+  CycleHoliday.tsx           |     100 |      100 |     100 |     100 |                   
+  RevealAnswer.tsx           |     100 |      100 |     100 |     100 |                   
+  StartAttempt.tsx           |     100 |     62.5 |     100 |     100 | 21-38             
+  TwoDice.tsx                |     100 |      100 |     100 |     100 |                   
+ src/form-components         |   94.73 |       90 |   91.66 |   94.73 |                   
+  ChangeColor.tsx            |     100 |      100 |     100 |     100 |                   
+  CheckAnswer.tsx            |     100 |      100 |     100 |     100 |                   
+  EditMode.tsx               |   85.71 |       75 |      75 |   85.71 | 14                
+  GiveAttempts.tsx           |     100 |      100 |     100 |     100 |                   
+  MultipleChoiceQuestion.tsx |     100 |      100 |     100 |     100 |                   
+ src/interfaces              |       0 |        0 |       0 |       0 |                   
+  answer.ts                  |       0 |        0 |       0 |       0 |                   
+  question.ts                |       0 |        0 |       0 |       0 |                   
+-----------------------------|---------|----------|---------|---------|-------------------
 
-    console.log
-      Before: 10px
-
-      at ShoveBox (src/bad-components/ShoveBox.tsx:36:13)
-
-    console.log
-      10
-
-      at ShoveBoxButton (src/bad-components/ShoveBox.tsx:28:13)
-
-----------------------|---------|----------|---------|---------|-------------------
-File                  | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
-----------------------|---------|----------|---------|---------|-------------------
-All files             |    99.6 |    95.12 |   99.15 |   99.59 |                   
- src                  |   99.35 |      100 |   98.61 |   99.33 |                   
-  App.tsx             |      50 |      100 |      50 |      50 | 34                
-  arrays.ts           |     100 |      100 |     100 |     100 |                   
-  functions.ts        |     100 |      100 |     100 |     100 |                   
-  nested.ts           |     100 |      100 |     100 |     100 |                   
-  objects.ts          |     100 |      100 |     100 |     100 |                   
- src/bad-components   |     100 |       50 |     100 |     100 |                   
-  ChooseTeam.tsx      |     100 |       50 |     100 |     100 | 18                
-  ColoredBox.tsx      |     100 |      100 |     100 |     100 |                   
-  DoubleHalf.tsx      |     100 |      100 |     100 |     100 |                   
-  DoubleHalfState.tsx |       0 |        0 |       0 |       0 |                   
-  ShoveBox.tsx        |     100 |      100 |     100 |     100 |                   
- src/components       |     100 |    86.36 |     100 |     100 |                   
-  ChangeType.tsx      |     100 |      100 |     100 |     100 |                   
-  Counter.tsx         |     100 |      100 |     100 |     100 |                   
-  CycleHoliday.tsx    |     100 |      100 |     100 |     100 |                   
-  RevealAnswer.tsx    |     100 |      100 |     100 |     100 |                   
-  StartAttempt.tsx    |     100 |     62.5 |     100 |     100 | 21-38             
-  TwoDice.tsx         |     100 |      100 |     100 |     100 |                   
- src/interfaces       |       0 |        0 |       0 |       0 |                   
-  answer.ts           |       0 |        0 |       0 |       0 |                   
-  question.ts         |       0 |        0 |       0 |       0 |                   
-----------------------|---------|----------|---------|---------|-------------------
-
-Test Suites: 15 passed, 15 total
-Tests:       110 passed, 110 total
+Test Suites: 3 failed, 17 passed, 20 total
+Tests:       10 failed, 124 passed, 134 total
 Snapshots:   0 total
-Time:        6.55 s
+Time:        7.883 s
 Ran all test suites.
