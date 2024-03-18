@@ -25,7 +25,7 @@ function ShoveBoxButton({
     position: number;
     setPosition: (newPosition: number) => void;
 }) {
-    console.log(position.toString());
+    //console.log(position.toString());
     return (
         <Button onClick={() => setPosition(4 + position)}>Shove the Box</Button>
     );
@@ -33,7 +33,7 @@ function ShoveBoxButton({
 
 export function ShoveBox(): JSX.Element {
     const [position, setPosition] = useState<number>(10);
-    console.log("Before: " + position.toString() + "px");
+    //console.log("Before: " + position.toString() + "px");
     //const box = MoveableBox();
 
     return (
